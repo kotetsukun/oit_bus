@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
-<script src="kitayama/time_saturday.json.js"></script>
-<script src="kitayama/time_sunday.json.js"></script>
-<script src="kitayama/time_weekdays.json.js"></script>
 
 <head>
     <meta charset="uft-8">
     <title>北山中央のバス時刻表</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="kitayama/time_saturday.json.js"></script>
+    <script src="kitayama/time_sunday.json.js"></script>
+    <script src="kitayama/time_weekdays.json.js"></script>
     <script>
         // 時間の取得
         var now = new Date();
@@ -120,10 +121,10 @@
         <h2>他のリンク</h2>
 
         <h3>(行き)長尾駅 --> 北山中央</h3>
-        <button onclick="location.href='nagao-kitayama.html'" style="width:90%;padding:25px;font-size:30px;">長尾駅 -->
+        <button onclick="location.href='nagao-kitayama.html'">長尾駅 -->
             北山中央のバス時刻表はこちら</button>
         <h3>Top page</h3>
-        <button onclick="location.href='index.html'" style="width:90%;padding:25px;font-size:30px;">Top pageに戻る</a>
+        <button onclick="location.href='index.html'" id="back">Top pageに戻る</a>
     </body>
 </body>
 

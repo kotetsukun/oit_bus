@@ -1,0 +1,75 @@
+button{
+    width:100%;
+    padding:44px;
+    font-size:30px;
+    background-color:#448aff;
+    box-shadow:0px 1px 0px 2px rgb(0,0,0,0.65);
+    border-radius:6px;
+}
+
+#back{
+	background-color:#d4d4d4;
+}
+.cp_breadcrumb *, .cp_breadcrumb *:after, .cp_breadcrumb *:before {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.cp_breadcrumb {
+	overflow: hidden;
+	width: 100%;
+	margin: 1em auto;
+	padding: 0;
+	list-style: none;
+}
+.cp_breadcrumb li {
+	display: inline-block;
+	margin: 0 1em 0.5em 0;
+}
+.cp_breadcrumb a {
+	position: relative;
+	z-index: 1;
+	padding: 0.7em 1em 0.7em 2em;
+	text-decoration: none;
+	color: #ffffff;
+	border-radius: 0.4em 0 0 0.4em;
+	background: #FF5722;
+	display: inline-block;
+	height: 40px;
+	line-height: 1em;
+	-webkit-transition:all 0.3s;
+	transition: all 0.3s;
+}
+.cp_breadcrumb a:hover {
+	background: #FFAB91;
+}
+.cp_breadcrumb a::after{
+	background: #FF5722;
+	content: "";
+	height: 2em;
+	position: absolute;
+	right: -1em;
+	top: calc(50% - 1em);
+	width: 2em;
+	z-index: -1;
+	transform: rotate(45deg);
+	border-radius: .4em;
+	-webkit-transition:all 0.3s;
+	transition: all 0.3s;
+}
+.cp_breadcrumb a:hover::after {
+	background: #FFAB91;
+}
+.cp_breadcrumb li:last-child a {
+	cursor: default;
+	pointer-events: none;
+	color: black;
+	background: transparent !important;
+	font-weight: bold;
+}
+.cp_breadcrumb li:last-child a:hover {
+	background: none;
+}
+.cp_breadcrumb li:last-child a::before,
+.cp_breadcrumb li:last-child a::after {
+	content: normal;
+}
