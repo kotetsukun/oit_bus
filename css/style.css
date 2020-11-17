@@ -1,3 +1,8 @@
+body{
+	width: 970px;
+	margin: 30px auto 40px;
+}
+
 button{
     width:100%;
     padding:44px;
