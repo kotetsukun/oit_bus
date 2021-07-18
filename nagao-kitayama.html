@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="uft-8">
-    <title>長尾駅のバス時刻表</title>
+    <title>長尾駅の京阪バス時刻表</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="nagao/time_saturday.json.js"></script>
-    <script src="nagao/time_sunday.json.js"></script>
-    <script src="nagao/time_weekdays.json.js"></script>
+    <script src="timetable/nagao/time_saturday.json.js"></script>
+    <script src="timetable/nagao/time_sunday.json.js"></script>
+    <script src="timetable/nagao/time_weekdays.json.js"></script>
     <script>
         // 時間の取得
         var now = new Date();
@@ -60,7 +60,7 @@
                 target_today.innerHTML += "(今日は平日ダイヤです)";
                 for (let i = 0; i <= 49; i++) {
                     if (now_time <= Number(bus_h[i].Hour) * 60 + Number(bus_h[i].Min)) {
-                        target_info.innerHTML += day_format + bus_h[i].Hour + "時" + bus_h[i].Min + "分 - " + bus_h[i].Bus + "<br>";
+                        target_info.innerHTML += bus_h[i].Hour + "時" + bus_h[i].Min + "分 - " + bus_h[i].Bus + "<br>";
                         if (Number(bus_h[i].Hour) * 60 + Number(bus_h[i].Min) >= now_time && flag == 0) {
                             next_hour = bus_h[i].Hour;
                             next_min = bus_h[i].Min;
@@ -73,7 +73,7 @@
                 target_today.innerHTML += "(今日は土曜日ダイヤです)";
                 for (let i = 0; i <= 20; i++) {
                     if (now_time <= Number(bus_d[i].Hour) * 60 + Number(bus_d[i].Min)) {
-                        target_info.innerHTML += day_format + bus_d[i].Hour + "時" + bus_d[i].Min + "分 - " + bus_d[i].Bus + "<br>";
+                        target_info.innerHTML += bus_d[i].Hour + "時" + bus_d[i].Min + "分 - " + bus_d[i].Bus + "<br>";
                         if (Number(bus_d[i].Hour) * 60 + Number(bus_d[i].Min) >= now_time && flag == 0) {
                             next_hour = bus_d[i].Hour;
                             next_min = bus_d[i].Min;
@@ -86,7 +86,7 @@
                 target_today.innerHTML += "(今日は休日ダイヤです)";
                 for (let i = 0; i <= 19; i++) {
                     if (now_time <= Number(bus_s[i].Hour) * 60 + Number(bus_s[i].Min)) {
-                        target_info.innerHTML += day_format + bus_s[i].Hour + "時" + bus_s[i].Min + "分 - " + bus_s[i].Bus + "<br>";
+                        target_info.innerHTML += bus_s[i].Hour + "時" + bus_s[i].Min + "分 - " + bus_s[i].Bus + "<br>";
                         if (Number(bus_s[i].Hour) * 60 + Number(bus_s[i].Min) >= now_time && flag == 0) {
                             next_hour = bus_s[i].Hour;
                             next_min = bus_s[i].Min;
@@ -97,7 +97,7 @@
                 }
             }
             if (next_hour != -1) {
-                target_next.innerHTML = day_format + next_hour + "時" + next_min + "分 - " + next_info;
+                target_next.innerHTML = next_hour + "時" + next_min + "分 - " + next_info;
             } else {
                 target_next.innerHTML = "今日のバスはありません";
             }
@@ -105,22 +105,28 @@
     </script>
 </head>
 
-<body onload="LoadProc();">
+<body>
     <h1>長尾駅 --> 北山中央(行きのバス)</h1>
-    <h2>現在の時刻:</h2>
-    <div id="DateTime"></div>
-    <h2>次のバス:</h2>
-    <font color="red">
-        <div id="DateTimeNext"></div>
-    </font>
-    <h2>以降のバスの時刻情報:</h2>
-    <div id="DateTimeInfo"></div>
-    <h2>他のリンク</h2>
-    <h3>(帰り)北山中央 --> 長尾駅</h3>
-    <button onclick="location.href='kitayama-nagao.html'">北山中央 -->
-        長尾駅のバス時刻表はこちら</button>
-    <h3>Top page</h3>
-    <button onclick="location.href='index.html'" id="back">Top pageに戻る</a>
-</body>
 
-</html>
+    <body onload="LoadProc();">
+        <div>
+            <h2>現在の時刻:</h2>
+            <div id="DateTime"></div>
+        </div>
+        <div>
+            <h2>次のバス:</h2>
+            <div id="DateTimeNext"></div>
+        </div>
+        <div>
+            <h2>以降のバスの時刻情報:</h2>
+            <div id="DateTimeInfo"></div>
+        </div>
+        <div>
+            <h2>他のリンク</h2>
+            <h3>(帰り)北山中央 --> 長尾駅</h3>
+            <button onclick="location.href='kitayama-nagao.html'">北山中央 --> 長尾駅のバス時刻表はこちら</button>
+            <h3>Top page</h3>
+            <button onclick="location.href='index.html'" id="back">Top pageに戻る</a>
+        </div>
+    </body>
+</body>
