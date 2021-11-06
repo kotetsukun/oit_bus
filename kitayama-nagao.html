@@ -8,6 +8,11 @@
     <script src="timetable/kitayama/time_saturday.json.js"></script>
     <script src="timetable/kitayama/time_sunday.json.js"></script>
     <script src="timetable/kitayama/time_weekdays.json.js"></script>
+
+    <!-- https://github.com/holiday-jp/holiday_jp-js -->
+    <script src="holiday_jp.min.js"></script>
+    <!------------------------------------------------->
+
     <script>
         // 時間の取得
         var now = new Date();
@@ -56,8 +61,11 @@
             var next_info = -1;
             var flag = 0;
 
+            //祝日判定
+            var holiday = holiday_jp.isHoliday(now);
+
             //判定
-            if (Youbi == 1 || Youbi == 2 || Youbi == 3 || Youbi == 4 || Youbi == 5) {
+            if ((Youbi == 1 || Youbi == 2 || Youbi == 3 || Youbi == 4 || Youbi == 5) && !holiday) {
                 target_today.innerHTML += "(今日は平日ダイヤです)";
                 for (let i = 0; i <= 52; i++) {
                     if (now_time <= Number(bus_h[i].Hour) * 60 + Number(bus_h[i].Min)) {
@@ -70,7 +78,7 @@
                         }
                     }
                 }
-            } else if (Youbi == 6) {
+            } else if (Youbi == 6 && !holiday) {
                 target_today.innerHTML += "(今日は土曜日ダイヤです)";
                 for (let i = 0; i <= 20; i++) {
                     if (now_time <= Number(bus_d[i].Hour) * 60 + Number(bus_d[i].Min)) {
