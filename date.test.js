@@ -1,4 +1,4 @@
-const holiday_jp = require('./holiday_jp.min')
+const holiday_jp = require('./holiday_jp-js/release/holiday_jp.min')
 
 function judgeDate(youbi, holiday) {
     if ((youbi == 1 || youbi == 2 || youbi == 3 || youbi == 4 || youbi == 5) && !holiday) {
