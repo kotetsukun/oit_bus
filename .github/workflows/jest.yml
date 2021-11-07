@@ -8,5 +8,7 @@ jobs:
     - run: node -v
     - run: yarn -v
     - uses: actions/checkout@v2
+      with:
+        submodules: true
     - run: yarn install
     - run: yarn run jest
