@@ -1,0 +1,3 @@
+[submodule "holiday_jp-js"]
+	path = holiday_jp-js
+	url = ../../holiday-jp/holiday_jp-js.git
